@@ -420,17 +420,33 @@ pie title Failure Case Distribution Across Audited Models
 
 ## 13. Interactive Application (`app/app.py`)
 
-To operationalize the findings, we built and verified a full-stack interactive web application using Gradio.
+To operationalize the findings and provide a research-grade evaluation platform, we developed **VERITAS**, an interactive web application built with Gradio 6.
 
-### 13.1 Architecture & User Experience
-- **Unified Interface**: Clean, dual-column responsive layout built on Gradio's soft theme.
-- **Model Switching**: Users can toggle on-the-fly between Classical Baseline, BiLSTM, and DistilBERT. Models are lazily cached in memory to preserve system RAM.
+### 13.1 High-Fashion Editorial UI Architecture (GAZU Aesthetic)
+Departing from standard generic prototype templates, the interface is styled with a bespoke minimalist, luxury editorial aesthetic inspired by modern architectural fashion typography (GAZU design system):
+- **Monochromatic Studio Palette**: Warm studio stone background (`#F4F4F2`), contrasted with deep obsidian black (`#0A0A0A` / `#0D0D0D`) and hairline architectural dividers (`#DCDCDA` / `#262626`).
+- **Typography & Brand Identity**: Clean grotesque sans-serif fonts (`Inter`, `Helvetica Neue`) featuring high-contrast tracked uppercase typography (`letter-spacing: 0.15em - 0.25em`) and prominent architectural headings.
+- **Top Utility Navigation**: Displays academic institutional attribution, active hardware acceleration engine (`MPS Accelerated` on Apple Silicon), and global reproducibility seed status (`Seed: 42`).
+- **3-Card Dark Inverted Model Strip**: High-contrast obsidian cards representing the three model families:
+  1. `TRANSFORMER (DISTILBERT)`: Benchmark leader (98.8% in-domain F1).
+  2. `RECURRENT DL (BILSTM)`: Sequence model with spatial dropout (93.0% F1).
+  3. `CLASSICAL ML (TF-IDF + LOGREG)`: Linear n-gram baseline (89.0% F1).
+- **Dual-Column Workspace**:
+  - *Left Column (`01 / EMPIRICAL VERACITY INPUT`)*: Multi-line text input with character counting, model selection dropdown, 1-click test item buttons (loading real news, fake clickbait, and Hinglish WhatsApp forwards), and solid black CTA button (`RUN EMPIRICAL ANALYSIS`).
+  - *Right Column (`02 / EMPIRICAL SCREENING DIAGNOSTICS`)*: Real-time tri-state veracity verdict, confidence probability gauge, token attribution highlighting, and abstention policy explanation.
+- **4-Column Empirical Metric Ribbon**: A persistent bottom ribbon displaying key benchmark statistics directly extracted from the research paper:
+  - Metric 01: In-Dataset F1 (`98.80%` on WELFake)
+  - Metric 02: Domain Shift Drop (`-42.85 pts` zero-shot on LIAR)
+  - Metric 03: Expected Calibration Error (`0.48%` ECE)
+  - Metric 04: Abstention Coverage (`99.55%` with $[0.40, 0.60]$ band)
+
+### 13.2 Tri-State Decision Logic & Safety Guards
 - **Tri-State Verdict Output**:
   - `🚨 Likely Fake News`: Displayed when $P(\text{Fake}) > 0.60$.
   - `✅ Likely Real / Credible News`: Displayed when $P(\text{Fake}) < 0.40$.
-  - `⚠️ Not Sure / Inconclusive`: Displayed when $0.40 \le P(\text{Fake}) \le 0.60$, with explicit explanation of model uncertainty.
-- **Dynamic Word Highlighting**: Salient tokens pushing predictions toward falsehood (e.g., *"urgent"*, *"miracle"*, *"secret"*) or credibility (e.g., *"confirmed"*, *"official"*, *"statement"*) are visually highlighted in red and green.
-- **Edge Case Robustness**: Input length truncation guards against buffer overflow on inputs $>5,000$ characters; empty submissions and whitespace are trapped with informative warnings without crashing.
+  - `⚠️ Not Sure / Inconclusive`: Displayed when $0.40 \le P(\text{Fake}) \le 0.60$, with explicit explanation of model uncertainty and recommendation for manual fact-checking.
+- **Dynamic Word Highlighting**: Salient tokens pushing predictions toward falsehood (e.g., *"urgent"*, *"miracle"*, *"secret"*) or credibility (e.g., *"confirmed"*, *"official"*, *"statement"*) are highlighted in contrasting red and green pill markers.
+- **Edge Case Robustness**: Input length truncation automatically guards against memory exhaustion on inputs $>5,000$ characters; empty submissions and whitespace are trapped with informative warnings without crashing.
 - **Mandatory Fact-Checking Disclaimer**: A prominent header disclaimer reminds users:
   > *"⚠️ SCREENING AID ONLY: This system estimates stylistic resemblance to known misinformation patterns. It does NOT verify factual reality or consult ground-truth knowledge bases."*
 
