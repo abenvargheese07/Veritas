@@ -1,0 +1,63 @@
+# Project Configuration: Fake News Detection DL End-Semester Project
+project:
+  name: "fake-news-dl"
+  title: "Fake News Detection Using Deep Learning: A Comparative Study of Classical ML, BiLSTM, and DistilBERT on Real-World, Hinglish-Aware News and Forwards"
+  random_seed: 42
+
+paths:
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  custom_dir: "data/custom"
+  models_dir: "models"
+  results_dir: "results"
+  metrics_dir: "results/metrics"
+  figures_dir: "results/figures"
+  tables_dir: "results/tables"
+  failure_cases_dir: "results/failure_cases"
+  report_dir: "report"
+
+hardware:
+  device: "auto" # 'mps', 'cuda', or 'cpu'
+
+data:
+  # Size limits for quick training & CPU/MPS execution without exceeding 25 min time-box
+  max_train_samples_per_dataset: 12000
+  max_val_samples_per_dataset: 2000
+  max_test_samples_per_dataset: 2000
+  fast_mode_samples: 500
+
+models:
+  baseline:
+    max_features: 10000
+    ngram_range: [1, 2]
+    cv_folds: 3
+    c_candidates: [0.1, 1.0, 5.0, 10.0]
+
+  bilstm:
+    vocab_size: 20000
+    embed_dim: 128
+    hidden_dim: 128
+    num_layers: 1
+    dropout: 0.3
+    learning_rate: 0.001
+    batch_size: 32
+    max_length: 128
+    epochs: 8
+    patience: 3
+    grad_clip: 5.0
+
+  distilbert:
+    model_name: "distilbert-base-uncased"
+    max_length: 128
+    batch_size: 32
+    learning_rate: 2.0e-5
+    weight_decay: 0.01
+    epochs: 3
+    patience: 2
+    train_samples: 8000
+    val_samples: 1500
+    test_samples: 1500
+
+calibration:
+  abstain_low: 0.40
+  abstain_high: 0.60

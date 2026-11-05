@@ -1,0 +1,192 @@
+{
+  "execution_timestamp": "2026-11-05 00:34:21",
+  "hardware_device": "mps",
+  "dataset_sizes": {
+    "welfake_test": 2000,
+    "liar_test": 2296,
+    "pilot_custom": 60
+  },
+  "model_comparison": [
+    {
+      "Model": "Baseline",
+      "Setting": "Setting_A_InDataset",
+      "Accuracy": 0.9355,
+      "Precision": 0.9421319796954315,
+      "Recall": 0.928,
+      "Macro_F1": 0.9354963716709065,
+      "ROC_AUC": 0.98245
+    },
+    {
+      "Model": "BiLSTM",
+      "Setting": "Setting_A_InDataset",
+      "Accuracy": 0.938,
+      "Precision": 0.9260700389105059,
+      "Recall": 0.952,
+      "Macro_F1": 0.9379878456177411,
+      "ROC_AUC": 0.982058
+    },
+    {
+      "Model": "DistilBERT",
+      "Setting": "Setting_A_InDataset",
+      "Accuracy": 0.988,
+      "Precision": 0.988,
+      "Recall": 0.988,
+      "Macro_F1": 0.988,
+      "ROC_AUC": 0.998926
+    },
+    {
+      "Model": "Baseline",
+      "Setting": "Setting_B_CrossDataset",
+      "Accuracy": 0.573170731707317,
+      "Precision": 0.5901208617971624,
+      "Recall": 0.8488284202569917,
+      "Macro_F1": 0.48939754683533043,
+      "ROC_AUC": 0.5714448849083998
+    },
+    {
+      "Model": "BiLSTM",
+      "Setting": "Setting_B_CrossDataset",
+      "Accuracy": 0.5770905923344948,
+      "Precision": 0.5992108229988726,
+      "Recall": 0.8034769463340892,
+      "Macro_F1": 0.5184862252066138,
+      "ROC_AUC": 0.5552525909301713
+    },
+    {
+      "Model": "DistilBERT",
+      "Setting": "Setting_B_CrossDataset",
+      "Accuracy": 0.5609756097560976,
+      "Precision": 0.6425339366515838,
+      "Recall": 0.5366591080876795,
+      "Macro_F1": 0.5595197130215264,
+      "ROC_AUC": 0.6016924070073388
+    },
+    {
+      "Model": "Baseline_TrainedOnLIAR",
+      "Setting": "Setting_B_ReverseCross",
+      "Accuracy": 0.5705,
+      "Precision": 0.5991561181434599,
+      "Recall": 0.426,
+      "Macro_F1": 0.5613406838131904,
+      "ROC_AUC": 0.616881
+    },
+    {
+      "Model": "Baseline",
+      "Setting": "Setting_C_ShortTexts",
+      "Accuracy": 0.9655172413793104,
+      "Precision": 0.9620253164556962,
+      "Recall": 1.0,
+      "Macro_F1": 0.9113752122241086,
+      "ROC_AUC": 0.9760765550239234
+    },
+    {
+      "Model": "Baseline",
+      "Setting": "Setting_C_LongTexts",
+      "Accuracy": 0.9341348667015159,
+      "Precision": 0.9403973509933775,
+      "Recall": 0.922077922077922,
+      "Macro_F1": 0.9340106442392982,
+      "ROC_AUC": 0.9818960951417979
+    },
+    {
+      "Model": "BiLSTM",
+      "Setting": "Setting_C_ShortTexts",
+      "Accuracy": 0.9655172413793104,
+      "Precision": 1.0,
+      "Recall": 0.9605263157894737,
+      "Macro_F1": 0.9299328859060403,
+      "ROC_AUC": 1.0
+    },
+    {
+      "Model": "BiLSTM",
+      "Setting": "Setting_C_LongTexts",
+      "Accuracy": 0.9367485624673288,
+      "Precision": 0.9204188481675393,
+      "Recall": 0.9512987012987013,
+      "Macro_F1": 0.9367285760246314,
+      "ROC_AUC": 0.9818315321348688
+    },
+    {
+      "Model": "DistilBERT",
+      "Setting": "Setting_C_ShortTexts",
+      "Accuracy": 0.9885057471264368,
+      "Precision": 0.987012987012987,
+      "Recall": 1.0,
+      "Macro_F1": 0.972922502334267,
+      "ROC_AUC": 0.9964114832535885
+    },
+    {
+      "Model": "DistilBERT",
+      "Setting": "Setting_C_LongTexts",
+      "Accuracy": 0.9879769994772608,
+      "Precision": 0.9880823401950163,
+      "Recall": 0.987012987012987,
+      "Macro_F1": 0.9879626713956204,
+      "ROC_AUC": 0.9989866890776902
+    },
+    {
+      "Model": "Baseline",
+      "Setting": "Setting_D_HinglishPilot",
+      "Accuracy": 0.55,
+      "Precision": 0.5272727272727272,
+      "Recall": 0.9666666666666667,
+      "Macro_F1": 0.45546218487394957,
+      "ROC_AUC": 0.6111111111111112
+    },
+    {
+      "Model": "BiLSTM",
+      "Setting": "Setting_D_HinglishPilot",
+      "Accuracy": 0.5666666666666667,
+      "Precision": 0.5370370370370371,
+      "Recall": 0.9666666666666667,
+      "Macro_F1": 0.48412698412698413,
+      "ROC_AUC": 0.6777777777777778
+    },
+    {
+      "Model": "DistilBERT",
+      "Setting": "Setting_D_HinglishPilot",
+      "Accuracy": 0.6,
+      "Precision": 0.5555555555555556,
+      "Recall": 1.0,
+      "Macro_F1": 0.5238095238095238,
+      "ROC_AUC": 0.8511111111111112
+    }
+  ],
+  "calibration_results": [
+    {
+      "Model": "Baseline",
+      "ECE": 0.020858552544156733,
+      "Raw_Accuracy": 0.9355,
+      "Covered_Accuracy": 0.9489690721649484,
+      "Accuracy_Gain": 0.013469072164948415,
+      "Coverage_Percent": 97.0,
+      "Abstained_Samples": 60,
+      "Covered_Samples": 1940
+    },
+    {
+      "Model": "BiLSTM",
+      "ECE": 0.04242859521508217,
+      "Raw_Accuracy": 0.938,
+      "Covered_Accuracy": 0.9424823410696267,
+      "Accuracy_Gain": 0.00448234106962675,
+      "Coverage_Percent": 99.1,
+      "Abstained_Samples": 18,
+      "Covered_Samples": 1982
+    },
+    {
+      "Model": "DistilBERT",
+      "ECE": 0.004816870093345593,
+      "Raw_Accuracy": 0.988,
+      "Covered_Accuracy": 0.9894525364138623,
+      "Accuracy_Gain": 0.0014525364138623376,
+      "Coverage_Percent": 99.55000000000001,
+      "Abstained_Samples": 9,
+      "Covered_Samples": 1991
+    }
+  ],
+  "ece_scores": {
+    "Baseline": 0.020858552544156733,
+    "BiLSTM": 0.04242859521508217,
+    "DistilBERT": 0.004816870093345593
+  }
+}

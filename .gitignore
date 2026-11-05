@@ -1,0 +1,66 @@
+# ==============================================================================
+# .gitignore - Fake News & Forward Veracity Detection Project
+# ==============================================================================
+
+# Python Virtual Environments
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Byte-compiled / optimized / cache files
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# OS-generated files (macOS & Windows)
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# IDE & Editor configurations
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+
+# Large ML Model Weights & Checkpoints (>100MB cannot be pushed to standard GitHub)
+# Generated dynamically via training scripts (scripts/train_bilstm.py, scripts/train_bert.py)
+*.safetensors
+*.pt
+*.bin
+*.joblib
+models/**/*.safetensors
+models/**/*.pt
+models/**/*.bin
+models/**/*.joblib
+
+# Track vocabulary and model architecture configurations in git
+!models/**/config.json
+!models/**/tokenizer.json
+!models/**/tokenizer_config.json
+!models/bilstm_vocab.json
+
+# Large raw datasets / temporary data downloads
+data/raw/*
+!data/raw/.gitkeep
+
+# Temporary outputs, logs, and scratch scripts
+*.log
+scratch/
+.ipynb_checkpoints/

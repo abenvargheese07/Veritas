@@ -1,0 +1,9 @@
+Model_Family,Experiment,Hyperparameters,Val_Accuracy,Val_Macro_F1,Val_ROC_AUC,Runtime_Seconds
+Baseline_TFIDF_LogReg,Tuned_C_Regularization,"C=5.0, ngram=(1,2)",0.8900,0.8900,0.9408,0.43
+BiLSTM,BiLSTM_Base,"hidden=128, drop=0.3, aug=False",0.9307,0.9305,,142.50
+BiLSTM,BiLSTM_HP_Var1_Hidden64,"hidden=64, drop=0.3, aug=False",0.9200,0.9200,,88.20
+BiLSTM,BiLSTM_HP_Var2_Drop05,"hidden=128, drop=0.5, aug=False",0.9273,0.9275,,94.10
+BiLSTM,BiLSTM_Augmentation_WordDropSwap,"hidden=128, drop=0.3, aug=True",0.9180,0.9179,,102.30
+DistilBERT,DistilBERT_Base,"lr=2e-05, max_len=128",0.9820,0.9820,,685.20
+DistilBERT,DistilBERT_HP_Var1_LR5e5,"lr=5e-05, max_len=128",0.9813,0.9813,,736.40
+DistilBERT,DistilBERT_HP_Var2_Seq64,"lr=2e-05, max_len=64",0.9667,0.9667,,331.70
